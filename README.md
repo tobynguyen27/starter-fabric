@@ -45,4 +45,4 @@ I suggest you to take a look at it and, if necessary, modify it to suit your cod
 
 ## License
 
-This template is licensed under CC0 1.0 Universal, meaning you can use it for any purpose without restriction. See the LICENSE file for details.
+This template is licensed under CC0 1.0 Universal, meaning you can use it for any purpose without restriction. See the [LICENSE](./LICENSE) file for details.
