@@ -11,7 +11,9 @@ val mod_id: String by project
 val maven_group: String by project
 
 version = mod_version
+
 group = maven_group
+
 base.archivesName = mod_id
 
 repositories {

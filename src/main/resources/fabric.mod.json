@@ -1,39 +1,39 @@
 {
-  "schemaVersion": 1,
-  "id": "${mod_id}",
-  "version": "${mod_version}",
-  "name": "${mod_name}",
-  "description": "${mod_description}",
-  "authors": ["<your name>"],
-  "contact": {
-    "email": "<your email>",
-    "homepage": "<your project homepage>",
-    "issues": "<your project issue tracker>",
-    "sources": "<your project source code>"
-  },
-  "license": "${mod_license}",
-  "icon": "assets/${mod_id}/icon.png",
-  "environment": "*",
-  "entrypoints": {
-    "main": [
-      {
-        "value": "com.example.examplemod.ExampleMod",
-        "adapter": "kotlin"
-      }
-    ],
-    "client": [
-      {
-        "value": "com.example.examplemod.ExampleModClient",
-        "adapter": "kotlin"
-      }
-    ]
-  },
-  "mixins": ["${mod_id}.mixins.json"],
-  "depends": {
-    "fabricloader": ">=${loader_version}",
-    "minecraft": "~${minecraft_version}",
-    "java": ">=17",
-    "fabric-api": "*",
-    "fabric-language-kotlin": "*"
-  }
+    "schemaVersion": 1,
+    "id": "${mod_id}",
+    "version": "${mod_version}",
+    "name": "${mod_name}",
+    "description": "${mod_description}",
+    "authors": ["<your name>"],
+    "contact": {
+        "email": "<your email>",
+        "homepage": "<your project homepage>",
+        "issues": "<your project issue tracker>",
+        "sources": "<your project source code>"
+    },
+    "license": "${mod_license}",
+    "icon": "assets/${mod_id}/icon.png",
+    "environment": "*",
+    "entrypoints": {
+        "main": [
+            {
+                "value": "com.example.examplemod.ExampleMod",
+                "adapter": "kotlin"
+            }
+        ],
+        "client": [
+            {
+                "value": "com.example.examplemod.ExampleModClient",
+                "adapter": "kotlin"
+            }
+        ]
+    },
+    "mixins": ["${mod_id}.mixins.json"],
+    "depends": {
+        "fabricloader": ">=${loader_version}",
+        "minecraft": "~${minecraft_version}",
+        "java": ">=17",
+        "fabric-api": "*",
+        "fabric-language-kotlin": "*"
+    }
 }
