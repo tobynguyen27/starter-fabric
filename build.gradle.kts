@@ -1,3 +1,7 @@
+import org.gradle.kotlin.dsl.withType
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile
+
 plugins {
     alias(libs.plugins.kotlin.jvm)
     alias(libs.plugins.fabric.loom)
@@ -79,9 +83,19 @@ tasks.withType<ProcessResources>().configureEach {
 tasks.withType<JavaCompile>().configureEach { options.encoding = "UTF-8" }
 
 java {
-    toolchain { languageVersion = JavaLanguageVersion.of(17) }
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+        vendor = JvmVendorSpec.GRAAL_VM
+    }
+
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
 
     withSourcesJar()
+}
+
+tasks.withType<KotlinJvmCompile>().configureEach {
+    compilerOptions { jvmTarget = JvmTarget.JVM_17 }
 }
 
 tasks.named<Jar>("jar") {
