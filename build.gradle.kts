@@ -1,6 +1,5 @@
 import org.gradle.kotlin.dsl.withType
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
-import org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile
 
 plugins {
     alias(libs.plugins.kotlin.jvm)
@@ -94,11 +93,7 @@ java {
     withSourcesJar()
 }
 
-kotlin {
-    compilerOptions {
-        jvmTarget = JvmTarget.JVM_17
-    }
-}
+kotlin { compilerOptions { jvmTarget = JvmTarget.JVM_17 } }
 
 tasks.named<Jar>("jar") {
     inputs.property("archivesName", project.base.archivesName)
