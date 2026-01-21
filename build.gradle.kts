@@ -94,8 +94,10 @@ java {
     withSourcesJar()
 }
 
-tasks.withType<KotlinJvmCompile>().configureEach {
-    compilerOptions { jvmTarget = JvmTarget.JVM_17 }
+kotlin {
+    compilerOptions {
+        jvmTarget = JvmTarget.JVM_17
+    }
 }
 
 tasks.named<Jar>("jar") {
@@ -122,7 +124,12 @@ spotless {
     encoding("UTF-8")
 
     kotlin {
-        ktfmt().kotlinlangStyle()
+        ktfmt().kotlinlangStyle().configure {
+            it.setMaxWidth(100)
+            it.setBlockIndent(4)
+            it.setContinuationIndent(4)
+            it.setRemoveUnusedImports(true)
+        }
         endWithNewline()
         toggleOffOn()
     }
