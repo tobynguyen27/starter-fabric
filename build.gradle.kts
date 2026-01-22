@@ -49,6 +49,16 @@ dependencies {
 }
 
 loom {
+    splitEnvironmentSourceSets()
+
+    mods {
+        val mod_id: String by project
+        register(mod_id) {
+            sourceSet("main")
+            sourceSet("client")
+        }
+    }
+
     runs {
         named("server") { runDir("run/server") }
 
